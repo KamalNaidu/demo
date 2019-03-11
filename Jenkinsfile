@@ -9,7 +9,7 @@ node{
     sh "${mvnHome}/bin/mvn package"
   }
   stage('Build Dcker Image'){
-        sh 'docker build'
+        sh 'docker build -q'
   }
 }
 }
