@@ -4,6 +4,6 @@ COPY pom.xml /usr/src/app
 RUN mvn -f /usr/src/app/pom.xml clean package
 
 FROM tomcat:8
-ADD /usr/src/app/target/springbootrocks.war springbootrocks.war  
+COPY --from=build /usr/src/app/target/springbootrocks.war springbootrocks.war  
 EXPOSE 8088
 ENTRYPOINT ["java","-jar","springbootrocks.jar"]
