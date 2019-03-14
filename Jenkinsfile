@@ -19,4 +19,7 @@ node{
           }
           sh 'docker push msitdevops/myapp:1.0.0'
     }
+    stage('Run Container on Dev Server'){
+          sh 'docker run -p 8088:8080 -d msitdevops/myapp:1.0.0'
+    }
 }
