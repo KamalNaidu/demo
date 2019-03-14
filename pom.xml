@@ -6,7 +6,7 @@
 	<artifactId>springbootrocks</artifactId>
 	<name>springbootrocks</name>
 	<description>Spring Boot Rocks</description>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -118,5 +118,6 @@
       			</configuration>
 			</plugin>
 		</plugins>
+		<finalName>springbootrocks</finalName>
 	</build>
 </project>
