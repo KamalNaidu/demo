@@ -5,5 +5,5 @@ RUN mvn -f /usr/src/app/pom.xml clean package
 
 FROM tomcat:8
 COPY --from=build /usr/src/app/target/springbootrocks.war springbootrocks.war  
-EXPOSE 8088
-ENTRYPOINT ["java","-jar","springbootrocks.jar"]
+EXPOSE 8089
+ENTRYPOINT ["java","-war","springbootrocks.war"]
