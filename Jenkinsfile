@@ -7,6 +7,9 @@ node{
       def mvnHome = tool name: 'maven-3', type: 'maven'
       sh "${mvnHome}/bin/mvn package"
     }
+    stage('Build Docker Compose'){
+        sh 'docker-compose up'
+    }
     stage('Build Dcker Image'){
           withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPwd')]) {
             sh "docker login -u msitdevops -p ${dockerHubPwd}"
