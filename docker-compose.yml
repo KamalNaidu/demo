@@ -1,6 +1,6 @@
 services:
   web:
-      image: nginx
+      image: msitdevops/myapp
       deploy:
         replicas: 5
         restart_policy:
