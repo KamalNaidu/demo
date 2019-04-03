@@ -1,12 +1,9 @@
+version: '2'
 services:
   app:
-      image: msitdevops/myapp
-      deploy:
-        replicas: 5
-        restart_policy:
-          condition: on-failure
+      image: msitdevops/myapp:1.0.0
       ports:
-        - "8089:8080"
+        - "8089:8089"
   db:
       image: mysql
       restart: always
@@ -17,10 +14,8 @@ services:
         MYSQL_ROOT_PASSWORD: 'admin'
       ports:
         # <Port exposed> : < MySQL Port running inside container>
-        - '3306:3306'
+        - '3309:3306'
       expose:
         # Opens port 3306 on the container
         - '3306'
         # Where our data will be persisted
-      volumes:
-        - my-db:/var/lib/mysql
