@@ -3,7 +3,7 @@ COPY src /usr/src/app/src
 COPY pom.xml /usr/src/app
 RUN mvn -f /usr/src/app/pom.xml clean package
 
-FROM tomcat:8
-COPY --from=build /usr/src/app/target/springbootrocks.war springbootrocks.war  
+FROM java:8
+COPY --from=build /usr/src/app/target/springbootrocks.jar springbootrocks.jar  
 EXPOSE 8089
-ENTRYPOINT ["java","-jar","springbootrocks.war"]
+ENTRYPOINT ["java","-jar","springbootrocks.jar"]
