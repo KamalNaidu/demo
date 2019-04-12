@@ -6,4 +6,4 @@ RUN mvn -f /usr/src/app/pom.xml clean package
 FROM java:8
 COPY --from=build /usr/src/app/target/springbootrocks.war springbootrocks.war  
 EXPOSE 8089
-ENTRYPOINT ["java","-war","springbootrocks.war","docker-compose.yml"]
+ENTRYPOINT ["java","-jar","springbootrocks.war","docker-compose.yml"]
