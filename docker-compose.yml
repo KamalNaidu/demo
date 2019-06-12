@@ -10,10 +10,10 @@ services:
       image: mysql:latest
       
       environment:
-        - MYSQL_DATABASE: "springbootrocks"
-        - MYSQL_USER: "root"
-        - MYSQL_PASSWORD: "admin"
-        - MYSQL_ROOT_PASSWORD: "admin"
+        - MYSQL_DATABASE: 'springbootrocks'
+        - MYSQL_USER: 'root'
+        - MYSQL_PASSWORD: 'admin'
+        - MYSQL_ROOT_PASSWORD: 'admin'
       ports:
         # <Port exposed> : < MySQL Port running inside container>
         - "3309:3306"
